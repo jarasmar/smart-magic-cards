@@ -78,5 +78,14 @@ function shuffle() {
   displayCards();  
 }
 
+function flipCards() {
+  if (cardsWrapper.classList.contains('hidden')) {
+    cardsWrapper.classList.remove('hidden');
+  } else {
+    cardsWrapper.classList.add('hidden');
+  } 
+}
+
 document.getElementById('start-game').addEventListener('click', startGame);
 document.getElementById('shuffle').addEventListener('click', shuffle);
+document.getElementById('show-hide').addEventListener('click', flipCards);
