@@ -5791,10 +5791,10 @@ h1 {
 }
 
 .card {
-  height: 300px;
-  width: 216px;
+  height: 225px;
+  width: 160px;
   position: absolute;
-  background-size: 100%;
+  background-size: cover;
 }
 .card.hearts-1 {
   background-image: url("../assets/cards/hearts-1.svg");
@@ -5958,8 +5958,8 @@ h1 {
 
 .cards-wrapper {
   width: calc(100vw - 4rem);
-  height: 300px;
-  overflow: scroll;
+  height: 230px;
+  overflow: auto;
   margin: 0 2rem;
   border-radius: 10px;
 }
@@ -5971,8 +5971,8 @@ h1 {
 }
 
 .selected-card-wrapper .selected-cards {
-  height: calc(300px + 4px);
-  width: calc(216px + 4px);
+  height: calc(225px + 4px);
+  width: calc(160px + 4px);
   border: 2px dashed white;
   border-radius: 6px;
   position: relative;
