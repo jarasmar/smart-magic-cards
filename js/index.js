@@ -51,7 +51,10 @@ function createCards() {
 
 // Function to clear out the initial button and create new buttons to play the game.
 function createButtons() {
-  // Your Code
+  document.getElementById('start-game').classList.add('invisible');
+  document.getElementById('shuffle').classList.remove('invisible');
+  document.getElementById('show-hide').classList.remove('invisible');
+  document.getElementById('magic').classList.remove('invisible');
 }
 
 // Function to start the game by clearing the wrapper, creating

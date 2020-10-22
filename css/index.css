@@ -3819,7 +3819,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .invisible {
-  visibility: hidden !important;
+  display: none !important;
 }
 
 *,
@@ -4157,6 +4157,7 @@ template {
     transition: none;
   }
 }
+
 .btn:hover {
   color: #212529;
   text-decoration: none;
@@ -4210,6 +4211,8 @@ fieldset:disabled a.btn {
   color: #212529;
   background-color: #00E3FF;
   border-color: #00E3FF;
+  display: block;
+  margin: 0 .5rem;
 }
 .btn-secondary:hover {
   color: #fff;
