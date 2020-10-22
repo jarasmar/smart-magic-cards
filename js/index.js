@@ -2,9 +2,9 @@ const suit = ['hearts', 'clubs', 'diamonds', 'spades'];
 const cardsWrapper = document.querySelector('.cards-wrapper');
 const btnWrapper = document.querySelector('.btn-wrapper'); /* eslint-disable-line */
 const selectedCardsWrapper = document.querySelector('.selected-cards'); /* eslint-disable-line */
+const cards = [];
 
 function createCards() {
-  const cards = [];
   // Create an array with objects containing the value and the suit of each card
   for (let i = 1; i <= 13; i += 1) {
     const cardObject = {
@@ -37,8 +37,10 @@ function createCards() {
     };
     cards.push(cardObject);
   }
+}
 
-  // For each dataObject, create a new card and append it to the DOM
+ // For each dataObject, create a new card and append it to the DOM
+function displayCards() { 
   cards.forEach((card, i) => {
     const positionFromLeft = i * 20;
     const cardElement = document.createElement('div');
@@ -62,6 +64,19 @@ function createButtons() {
 function startGame() {
   createButtons();
   createCards();
+  displayCards();
+}
+
+function shuffle() {
+  for (var i = cards.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = cards[i];
+    cards[i] = cards[j];
+    cards[j] = temp;
+  }
+  console.log(cards);
+  displayCards();  
 }
 
 document.getElementById('start-game').addEventListener('click', startGame);
+document.getElementById('shuffle').addEventListener('click', shuffle);
