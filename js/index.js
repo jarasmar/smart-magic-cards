@@ -43,8 +43,9 @@ function createCards() {
 function displayCards() { 
   cards.forEach((card, i) => {
     const positionFromLeft = i * 20;
-    const cardElement = document.createElement('div');
+    const cardElement = document.createElement('a');
     cardElement.setAttribute('data-value', card.value);
+    cardElement.setAttribute('onclick', 'selectCard(this);');
     cardElement.classList.add('card', `${card.suit}-${card.value}`);
     cardElement.style.left = `${positionFromLeft}px`;
     cardsWrapper.append(cardElement);
@@ -56,7 +57,6 @@ function createButtons() {
   document.getElementById('start-game').classList.add('invisible');
   document.getElementById('shuffle').classList.remove('invisible');
   document.getElementById('show-hide').classList.remove('invisible');
-  document.getElementById('magic').classList.remove('invisible');
 }
 
 // Function to start the game by clearing the wrapper, creating
@@ -86,6 +86,15 @@ function flipCards() {
   } 
 }
 
+function selectCard(card) {
+  // Change the position of the card to 0 so it is centered in selectedCards div
+  card.style.left = 0;
+  selectedCardsWrapper.append(card);
+
+  document.getElementById('magic').classList.remove('invisible');
+}
+
 document.getElementById('start-game').addEventListener('click', startGame);
 document.getElementById('shuffle').addEventListener('click', shuffle);
 document.getElementById('show-hide').addEventListener('click', flipCards);
+cardsWrapper.addEventListener('click', selectCard(this));
