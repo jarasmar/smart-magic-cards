@@ -79,6 +79,10 @@ function shuffle() {
     cards[j] = temp;
   }
 
+  console.log(cards);
+  console.log([...cardsWrapper.children]);
+
+  // This displays shuffled cards by creating a new deck (gives error on magic trick)
   displayCards();  
 }
 
@@ -106,6 +110,9 @@ function performMagic() {
   let magicResult = [...cardsWrapper.children].filter(card => {
     return (card.getAttribute('data-value') === cardValue && card.getAttribute('data-suit') !== cardSuit);
   });
+
+  // Remove duplicates from [...cardsWrapper.children] before creating magicResult
+  // or change Shuffle method to not create new decks on render
 
   // Display magic trick result cards
   [...magicResult].forEach((card, i) => {

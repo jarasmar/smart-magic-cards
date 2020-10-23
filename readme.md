@@ -14,9 +14,9 @@ Eg. the 8 of hears it picked, now all the 8's are removed from the deck and adde
 - Add 3 buttons to the flow that will allow you to do 3 actions:
   - [x] **Shuffle:** Randomly shuffles all cards.
   - [x] **Flip cards:** Turn all the cards face down by adding a class (CSS is already included).
-  - [ ] **Magic:** Remove all related cards from the deck after picking a card. (Only display this button after a card has been picked).
-- [ ] Create the functionality to pick a card, by clicking on a random card.
-- [ ] When the trick is performed (by clicking the magic button), move the related cards to the picked card.
+  - [x] **Magic:** Remove all related cards from the deck after picking a card. (Only display this button after a card has been picked).
+- [x] Create the functionality to pick a card, by clicking on a random card.
+- [x] When the trick is performed (by clicking the magic button), move the related cards to the picked card.
 
 ### Bonus points
   - [ ] Find a way to remove duplications in the `cards.scss` file and generate all the classes automatically for the cards: `.hearts-1`, `.hearts-2`, ... , `.spades-13`.
@@ -28,6 +28,7 @@ Eg. the 8 of hears it picked, now all the 8's are removed from the deck and adde
   - [ ] Having a way of resetting the app, withouth reloading the page.
   - [ ] Do not break any linting rules. (The linter runs before tests)
   - [ ] Add some extra functionality, this is your chance to be creative. 😉
+    - [ ] Add Play Again Button to restart game.
 
 #### Example
 <img src="assets/working-example.gif" alt="working-example">
