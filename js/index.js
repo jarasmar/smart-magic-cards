@@ -3,6 +3,9 @@ const cardsWrapper = document.querySelector('.cards-wrapper');
 const btnWrapper = document.querySelector('.btn-wrapper'); /* eslint-disable-line */
 const selectedCardsWrapper = document.querySelector('.selected-cards'); /* eslint-disable-line */
 const cards = [];
+let cardValue = "";
+let cardSuit = "";
+// let magicResult = [];
 
 function createCards() {
   // Create an array with objects containing the value and the suit of each card
@@ -45,6 +48,7 @@ function displayCards() {
     const positionFromLeft = i * 20;
     const cardElement = document.createElement('a');
     cardElement.setAttribute('data-value', card.value);
+    cardElement.setAttribute('data-suit', card.suit);
     cardElement.setAttribute('onclick', 'selectCard(this);');
     cardElement.classList.add('card', `${card.suit}-${card.value}`);
     cardElement.style.left = `${positionFromLeft}px`;
@@ -74,7 +78,7 @@ function shuffle() {
     cards[i] = cards[j];
     cards[j] = temp;
   }
-  console.log(cards);
+
   displayCards();  
 }
 
@@ -91,10 +95,28 @@ function selectCard(card) {
   card.style.left = 0;
   selectedCardsWrapper.append(card);
 
+  cardValue = card.getAttribute('data-value');
+  cardSuit = card.getAttribute('data-suit');
+
   document.getElementById('magic').classList.remove('invisible');
+}
+
+function performMagic() {
+  // Get result cards after magic trick
+  let magicResult = [...cardsWrapper.children].filter(card => {
+    return (card.getAttribute('data-value') === cardValue && card.getAttribute('data-suit') !== cardSuit);
+  });
+
+  // Display magic trick result cards
+  [...magicResult].forEach((card, i) => {
+    const position = (i + 1) * 20;
+    card.style.left = `${position}px`;
+    selectedCardsWrapper.append(card);
+  });
 }
 
 document.getElementById('start-game').addEventListener('click', startGame);
 document.getElementById('shuffle').addEventListener('click', shuffle);
 document.getElementById('show-hide').addEventListener('click', flipCards);
+document.getElementById('magic').addEventListener('click', performMagic);
 cardsWrapper.addEventListener('click', selectCard(this));
