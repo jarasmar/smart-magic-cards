@@ -3,8 +3,8 @@ const cardsWrapper = document.querySelector('.cards-wrapper');
 const btnWrapper = document.querySelector('.btn-wrapper'); /* eslint-disable-line */
 const selectedCardsWrapper = document.querySelector('.selected-cards'); /* eslint-disable-line */
 const cards = [];
-let cardValue = "";
-let cardSuit = "";
+let cardValue = '';
+let cardSuit = '';
 // let magicResult = [];
 
 function createCards() {
@@ -42,8 +42,8 @@ function createCards() {
   }
 }
 
- // For each dataObject, create a new card and append it to the DOM
-function displayCards() { 
+// For each dataObject, create a new card and append it to the DOM
+function displayCards() {
   cards.forEach((card, i) => {
     const positionFromLeft = i * 20;
     const cardElement = document.createElement('a');
@@ -72,14 +72,14 @@ function startGame() {
 }
 
 function shuffle() {
-  for (var i = cards.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = cards[i];
+  for (let i = cards.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = cards[i];
     cards[i] = cards[j];
     cards[j] = temp;
   }
 
-  displayCards();  
+  displayCards();
 }
 
 function flipCards() {
@@ -87,7 +87,7 @@ function flipCards() {
     cardsWrapper.classList.remove('hidden');
   } else {
     cardsWrapper.classList.add('hidden');
-  } 
+  }
 }
 
 function selectCard(card) {
@@ -103,7 +103,7 @@ function selectCard(card) {
 
 function performMagic() {
   // Get magic result cards from deck (same value, different suit)
-  let magicResult = [...cardsWrapper.children].filter(card => {
+  const magicResult = [...cardsWrapper.children].filter((card) => {
     return (card.getAttribute('data-value') === cardValue && card.getAttribute('data-suit') !== cardSuit);
   });
 
