@@ -103,9 +103,9 @@ function selectCard(card) {
 
 function performMagic() {
   // Get magic result cards from deck (same value, different suit)
-  const magicResult = [...cardsWrapper.children].filter((card) => {
-    return (card.getAttribute('data-value') === cardValue && card.getAttribute('data-suit') !== cardSuit);
-  });
+  const magicResult = [...cardsWrapper.children].filter((card) => (
+    (card.getAttribute('data-value') === cardValue && card.getAttribute('data-suit') !== cardSuit)
+  ));
 
   // Remove duplicates from magicResult (leave only first three elements)
   magicResult.splice(3, magicResult.length);
