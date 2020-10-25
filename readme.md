@@ -26,9 +26,8 @@ Eg. the 8 of hears it picked, now all the 8's are removed from the deck and adde
   - [ ] Add additional tests (we like test coverage).
   - [ ] Usuage of drag and drop to pick a card.
   - [ ] Having a way of resetting the app, withouth reloading the page.
-  - [ ] Do not break any linting rules. (The linter runs before tests)
+  - [x] Do not break any linting rules. (The linter runs before tests)
   - [ ] Add some extra functionality, this is your chance to be creative. 😉
-    - [ ] Add Play Again Button to restart game.
 
 #### Example
 <img src="assets/working-example.gif" alt="working-example">
